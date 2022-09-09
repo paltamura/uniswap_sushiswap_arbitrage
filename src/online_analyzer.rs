@@ -139,11 +139,12 @@ impl OnlineAnalyzer {
         let minimum_reserves_ok = reserves_0 > &BigInt::from(MINIMUM_RESERVES) && reserves_1 > &BigInt::from(MINIMUM_RESERVES);
         if not_div_zero && minimum_reserves_ok {
             let wad = &BigInt::from(WAD);
+            let com = &BigInt::from(COMMISSION_IN_WAD);
             let k = reserves_0 * reserves_1;
             let new_res0 = reserves_0 + payment_0;
             let new_res1 = &k * wad / new_res0;
-            let recibo1 = ((reserves_1 * wad) - &new_res1) / wad;
-            Some(recibo1)
+            let calc = ((reserves_1 * wad) - &new_res1) / wad;
+            Some(calc * (wad - com) / wad)
         } else {
             None
         }
@@ -151,12 +152,13 @@ impl OnlineAnalyzer {
 
     fn get_out2(&self, payment_0: &BigInt, reserves_0: &BigInt, reserves_1: &BigInt) -> Option<BigInt> {
         let wad = &BigInt::from(WAD);
+        let com = &BigInt::from(COMMISSION_IN_WAD);
         let not_div_zero = reserves_0 > &BigInt::from(0u64);
         let minimum_reserves_ok = reserves_0 > &BigInt::from(MINIMUM_RESERVES) && reserves_1 > &BigInt::from(MINIMUM_RESERVES);
         if not_div_zero && minimum_reserves_ok {
             let ratio = (reserves_1 * wad * wad) / reserves_0;
             let calc = (payment_0 * ratio) / wad;
-            Some(calc)
+            Some(calc * (wad - com) / wad)
         } else {
             None
         }

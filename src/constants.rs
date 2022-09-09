@@ -11,7 +11,8 @@ pub const INCLUDE_IMPACT_OF_TRANSACTION: bool = true;
 pub const AMOUNT_OF_SIMULATION_IN_WEI: u64 = 1_000_000_000_000_000_000;
 //pub const AMOUNT_OF_SIMULATION_IN_WEI: u64 = 1_000;
 
-pub const WAD: u64 = 1_000_000_000_000_000_000;
+pub const WAD: u64 =           1_000_000_000_000_000_000;
+pub const COMMISSION_IN_WAD: u64 = 3_000_000_000_000_000;
 
 pub const RPC_URL_MAINNET: &str = "https://mainnet.infura.io/v3/79408f3788cd4635b40bdd9e4fceaad5";
 pub const WETH_ADDRESS: &str = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
