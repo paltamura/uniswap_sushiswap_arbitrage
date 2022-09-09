@@ -1,0 +1,21 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "pair",
+				"type": "address[]"
+			}
+		],
+		"name": "viewPair",
+		"outputs": [
+			{
+				"internalType": "uint112[]",
+				"name": "",
+				"type": "uint112[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

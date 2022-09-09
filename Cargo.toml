@@ -1,0 +1,17 @@
+[package]
+name = "uniswap-sushiswap-arbitrage"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ethers-providers = "0.17.0"
+ethers-core = "0.17.0"
+ethers-contract = "0.17.0"
+ethers-signers = "0.17.0"
+tokio = { version = "1.20.1", features = ["full"] }
+serde_json = "*"
+serde = { version = "*", features = ["derive"] }
+json = "*"
+nalgebra = "0.7.0"
+itertools = "0.10.0"
+bigdecimal = "*"
